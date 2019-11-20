@@ -1,0 +1,11 @@
+{
+	"session": "93c61170-0800-4a31-8bc2-410ec488702c",
+	"sessionTitle": "Test Session",
+	"user": "reporter",
+	"auth": false,
+	"ip": "192.168.1.1",
+	"message": "This session is breaking the rules",
+	"offset": 10000,
+	"users": []
+}
+

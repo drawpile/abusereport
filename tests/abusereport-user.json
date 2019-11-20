@@ -1,0 +1,27 @@
+{
+	"session": "93c61170-0800-4a31-8bc2-410ec488702c",
+	"sessionTitle": "Test Session",
+	"user": "reporter",
+	"auth": false,
+	"ip": "192.168.1.1",
+	"message": "This guy is trolling!",
+	"offset": 10000,
+	"perp": 3,
+	"users": [
+		{
+			"id": 1,
+			"name": "reporter",
+			"auth": false,
+			"mod": false,
+			"ip": "192.168.1.1"
+		},
+		{
+			"id": 3,
+			"name": "troller",
+			"auth": false,
+			"mod": false,
+			"ip": "192.168.1.2"
+		}
+	]
+}
+
