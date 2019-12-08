@@ -26,9 +26,9 @@ class Settings:
 load_dotenv()
 
 settings = Settings(
-    ('AUTH_TOKEN', required),   # Token shared with the Drawpile server
-    ('SERVER_HOST', required),  # Hostname of the Drawpile server
-    ('DISCORD_WEBHOOK', ''),    # URL of the Discord webhook relay target
+    ('AUTH_TOKEN', ''),            # Token shared with the Drawpile server
+    ('SERVER_HOST', 'localhost'),  # Hostname of the Drawpile server
+    ('DISCORD_WEBHOOK', ''),       # URL of the Discord webhook relay target
 )
 
 if settings._errors:

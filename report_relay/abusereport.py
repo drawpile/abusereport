@@ -47,15 +47,17 @@ async def receive_report(request):
         auth_type, auth_token = request.headers\
             .get('authorization', '').split(' ', 1)
     except ValueError:
-        return web.Response(text="Bad authorization", status=401)
+        auth_type = ''
+        auth_token = ''
 
-    if auth_type.lower() != 'token':
-        return web.Response(
-            text="Authorization type must be Token",
-            status=401)
+    if settings.AUTH_TOKEN:
+        if auth_type.lower() != 'token':
+            return web.Response(
+                text="Authorization type must be Token",
+                status=401)
 
-    if auth_token != settings.AUTH_TOKEN:
-        return web.Response(text="Incorrect token", status=401)
+        if auth_token != settings.AUTH_TOKEN:
+            return web.Response(text="Incorrect token", status=401)
 
     try:
         body = await request.json()
