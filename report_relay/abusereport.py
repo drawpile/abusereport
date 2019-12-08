@@ -84,9 +84,20 @@ async def receive_report(request):
         logger.warn(
             "Report from %s not relayed, because no targets were configured!",
             body['user'])
+        return web.Response(text='Reporting not configured', status=500)
 
     else:
-        await asyncio.gather(*targets)
+        results = await asyncio.gather(*targets, return_exceptions=True)
+
+        success = 0
+        for result in results:
+            if isinstance(result, Exception):
+                logger.error("Delivery error: " + str(result))
+            else:
+                success += 1
+
+        if success == 0:
+            return web.Response(text='Report delivery failed', status=500)
 
         logger.info("Abuse report from %s sent to %d target(s)".format(
             body['user'],
