@@ -3,6 +3,7 @@ FROM python:3.7-alpine3.9
 RUN adduser -D -u 1000 python
 WORKDIR /home/python
 
+RUN apk add gcc python3-dev musl-dev
 COPY freeze.txt .
 RUN pip install -r freeze.txt
 
