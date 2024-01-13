@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.9
+FROM python:3-alpine
 
 RUN adduser -D -u 1000 python
 WORKDIR /home/python
