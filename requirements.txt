@@ -1,4 +1,4 @@
-aiohttp==3.13.4
-python-dotenv==1.0.0
-gunicorn==22.0.0
-jsonschema==4.20.0
+aiohttp==3.14.5
+python-dotenv==1.2.4
+gunicorn==26.2.0
+jsonschema==4.26.0
